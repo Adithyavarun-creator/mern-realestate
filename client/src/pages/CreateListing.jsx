@@ -136,6 +136,7 @@ export default function CreateListing() {
       const res = await fetch(
         "https://mern-realestate-server.vercel.app/api/listing/create-listing",
         {
+          mode: "no-cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json",

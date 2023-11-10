@@ -18,7 +18,13 @@ mongoose
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+
+var corsOptions = {
+  origin: "https://mern-realestate-server.vercel.app",
+};
+
+app.use(cors(corsOptions));
 
 // const __dirname = path.resolve();
 
