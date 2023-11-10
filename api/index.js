@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require("path");
+const cors = require("cors");
 
 const authRoute = require("./routes/authRoute");
 const userRoute = require("./routes/userRoute");
@@ -16,6 +17,8 @@ mongoose
   .catch(() => console.log(error));
 
 const app = express();
+
+app.use(cors());
 
 // const __dirname = path.resolve();
 
