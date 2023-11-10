@@ -20,11 +20,11 @@ const app = express();
 
 // app.use(cors());
 
-var corsOptions = {
-  origin: "https://mern-realestate-server.vercel.app",
-};
+// var corsOptions = {
+//   origin: "https://mern-realestate-server.vercel.app",
+// };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 // const __dirname = path.resolve();
 
