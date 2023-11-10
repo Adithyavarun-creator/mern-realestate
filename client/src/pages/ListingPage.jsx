@@ -31,9 +31,11 @@ const ListingPage = () => {
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const listingId = params.listingId;
+        // const listingId = params.listingId;
         //https://mern-realestate-server.vercel.app/
-        const res = await fetch(`https://mern-realestate-server.vercel.app/api/listing/get/${listingId}`);
+        const res = await fetch(
+          `https://mern-realestate-server.vercel.app/api/listing/get/${params.listingId}`
+        );
         const data = await res.json();
         if (data.success === false) {
           console.log(data.message);
