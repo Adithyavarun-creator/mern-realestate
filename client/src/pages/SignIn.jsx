@@ -35,7 +35,6 @@ const SignIn = () => {
         "https://mern-realestate-server.vercel.app/api/auth/signin",
         {
           mode: "no-cors",
-
           method: "POST",
           headers: {
             "Content-Type": "application/json",
