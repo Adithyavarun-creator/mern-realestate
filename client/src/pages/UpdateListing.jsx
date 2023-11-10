@@ -40,9 +40,7 @@ export default function CreateListing() {
     const fetchListing = async () => {
       const listingId = params.listingId;
       //console.log(listingId);
-      const res = await fetch(
-        `https://mern-realestate-server.vercel.app/api/listing/get/${listingId}`
-      );
+      const res = await fetch(`/api/listing/get/${listingId}`);
       const data = await res.json();
       if (data.success === false) {
         console.log(data.message);
@@ -154,7 +152,7 @@ export default function CreateListing() {
       // setLoading(true);
       // setError(false);
       const res = await fetch(
-        `https://mern-realestate-server.vercel.app/api/listing/update-listing/${params.listingId}`,
+        `/api/listing/update-listing/${params.listingId}`,
         {
           method: "POST",
           headers: {
