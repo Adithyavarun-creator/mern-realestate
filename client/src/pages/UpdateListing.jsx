@@ -149,8 +149,8 @@ export default function CreateListing() {
         return setError("You must upload at least one image");
       if (+formData.regularPrice < +formData.discountPrice)
         return setError("Discount price must be lower than regular price");
-      // setLoading(true);
-      // setError(false);
+      setLoading(true);
+      setError(false);
       const res = await fetch(
         `/api/listing/update-listing/${params.listingId}`,
         {
