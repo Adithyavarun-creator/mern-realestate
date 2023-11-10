@@ -26,6 +26,7 @@ const SignUp = () => {
       const res = await fetch(
         "https://mern-realestate-server.vercel.app/api/auth/signup",
         {
+          mode: "no-cors",
           method: "POST",
           headers: {
             "Content-Type": "application/json",
