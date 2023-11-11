@@ -133,20 +133,17 @@ export default function CreateListing() {
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
-      const res = await fetch(
-        "https://mern-realestate-server.vercel.app/api/listing/create-listing",
-        {
-          // mode: "no-cors",
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            ...formData,
-            userRef: currentUser ? currentUser : "random guy",
-          }),
-        }
-      );
+      const res = await fetch("/api/listing/create-listing", {
+        // mode: "no-cors",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          userRef: currentUser ? currentUser : "random guy",
+        }),
+      });
       const data = await res.json();
       setLoading(false);
       if (data.success === false) {

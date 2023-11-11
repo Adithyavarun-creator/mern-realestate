@@ -27,15 +27,16 @@ const ListingPage = () => {
 
   const { currentUser } = useSelector((state) => state.user);
 
+  console.log(params.listingId);
+
   useEffect(() => {
     const fetchListing = async () => {
       try {
         setLoading(true);
         // const listingId = params.listingId;
         //https://mern-realestate-server.vercel.app/
-        const res = await fetch(
-          `https://mern-realestate-server.vercel.app/api/listing/get/${params.listingId}`
-        );
+        const res = await fetch(`/api/listing/get/${params.listingId}`);
+
         const data = await res.json();
         if (data.success === false) {
           console.log(data.message);
